@@ -1,0 +1,47 @@
+[
+  {
+    "title": "제목 1",
+    "content": "content5 content5 content5 content5 content5 content5 ",
+    "imageUrl": "https://news.samsungdisplay.com/upload/notice/2023/05/dlvpDzohdp_20230531151658.jpg",
+    "date": "2024-01-01",
+    "commentsCount": 15,
+    "author": "작성자1",
+    "likesCount": 100
+  },
+  {
+    "title": "제목 2",
+    "content": "content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 content5 ",
+    "imageUrl": "https://www.kocca.kr/trend/vol30/img/s11/img_1.jpg",
+    "date": "2024-01-02",
+    "commentsCount": 5,
+    "author": "작성자2",
+    "likesCount": 50
+  },
+  {
+    "title": "제목 3",
+    "content": "content5 content5 content5 content5 content5 content5 ",
+    "imageUrl": "https://cdn.hanryutimes.com/news/photo/202312/77225_88447_269.png",
+    "date": "2024-01-03",
+    "commentsCount": 20,
+    "author": "작성자3",
+    "likesCount": 80
+  },
+  {
+    "title": "제목 4",
+    "content": "content5 content5 content5 content5 content5 content5 ",
+    "imageUrl": "https://www.kyongbuk.co.kr/news/photo/202308/2140013_585486_0156.jpg",
+    "date": "2024-01-03",
+    "commentsCount": 20,
+    "author": "작성자3",
+    "likesCount": 80
+  },
+  {
+    "title": "제목 5",
+    "content": "content5 content5 content5 content5 content5 content5 ",
+    "imageUrl": "https://cdn.slist.kr/news/photo/202309/485867_777213_4058.jpg",
+    "date": "2024-01-03",
+    "commentsCount": 20,
+    "author": "작성자3",
+    "likesCount": 80
+  }
+]
