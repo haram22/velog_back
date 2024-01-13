@@ -35,9 +35,9 @@ const Spacer = () => <div style={{ flexGrow: 1 }} />;
 const PostButton = styled.button`
     text-align: center;
     background-color: ${theme.colors.background};
-    color: white;
+    color: ${theme.colors.white1};
     border-radius: 20px;
-    border-color: white;
+    border-color: ${theme.colors.white1};
     border-width: 2px;
     border-style: solid;
     margin-left: 20px;
