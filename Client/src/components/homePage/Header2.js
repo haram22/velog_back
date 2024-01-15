@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import theme from "../styles/theme";
+import theme from "../../styles/theme";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import RssFeedIcon from "@mui/icons-material/RssFeed";

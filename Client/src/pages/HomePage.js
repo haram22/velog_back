@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from '../styles/theme';
-import Header from '../components/Header';
-import Header2 from '../components/Header2';
-import HomeCard from '../components/HomeCard';
+import Header from '../components/homePage/Header';
+import Header2 from '../components/homePage/Header2';
+import HomeCard from '../components/homePage/HomeCard';
 
 export default function Home() {
 	return (

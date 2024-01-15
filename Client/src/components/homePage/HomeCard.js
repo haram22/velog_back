@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import theme from "../styles/theme";
-import dummyData from "../data/Dummy.json";
+import theme from "../../styles/theme";
+import dummyData from "../../data/Dummy.json";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export default function HomeCard() {
