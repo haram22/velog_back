@@ -13,11 +13,11 @@ const defaultOption = options[1];
 export default function Header2() {
   return (
     <HeaderContainer2>
-      <TabBarButton>
+      <TabBarButton style={{marginLeft:"40px"}}>
         <TrendingUpIcon
           sx={{ fontSize: "24px", color: "white", paddingTop: "5px" }}
         />
-        <div style={{ paddingTop: "8px", paddingLeft: "5px" }}>트렌딩</div>
+        <div style={{ paddingTop: "8px", paddingLeft: "5px"}}>트렌딩</div>
       </TabBarButton>
       <TabBarButton borderColor="transparent">
         <AccessTimeIcon
@@ -50,11 +50,13 @@ const HeaderContainer2 = styled.div`
   display: flex;
   flex-direction: row;
   width: 100vw;
-  height: 40px;
+  max-height: 40px;
   background-color: ${theme.colors.background};
   position: fixed;
   margin-top: 30px;
   padding-top: 80px;
+  margin-left: 40px;
+  margin-right: 40px;
   top: 0;
 `;
 

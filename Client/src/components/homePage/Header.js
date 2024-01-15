@@ -14,7 +14,7 @@ export default function Header() {
   }
 
   return (
-    <HeaderContainer>
+    <HeaderContainer style={{marginLeft: "40px", paddingLeft: "90px"}}>
       <img src={Logo} width={69.92} alt="Logo" />
       <Spacer />
       <NightlightIcon
@@ -50,6 +50,8 @@ const HeaderContainer = styled.div`
   background-color: ${theme.colors.background};
   position: fixed;
   padding-top: 12px;
+  /* margin-left: 40px; */
+  margin-right: 40px;
   top: 0;
   z-index: 1000;
 `;

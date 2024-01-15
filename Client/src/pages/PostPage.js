@@ -51,12 +51,13 @@ export default PostPage;
 
 const Container = styled.div`
   flex-direction: column;
+  /* overflow-x: hidden; // 가로 스크롤 방지 */
+  overflow-y: hidden;
   align-items: center;
   background-color: ${theme.colors.background};
   box-sizing: border-box;
-  max-width: calc(100vw - 40px); // 뷰포트 너비 설정
-  overflow-x: hidden; // 가로 스크롤 방지
-  overflow-y: hidden;
+  max-width: calc(100vw + 40px); // 뷰포트 너비 설정
+  max-height: 100vh; 
 `;
 
 const StyledMDEditor = styled(MDEditor)`
@@ -64,7 +65,7 @@ const StyledMDEditor = styled(MDEditor)`
   border-radius: 0px;
   background-color: ${theme.colors.background};
   max-width: 100%;
-  max-height: calc(100vh - 190px);
+  max-height: calc(100vh - 180px);
   overflow-y: auto;
   overflow-x: hidden;
 `;
@@ -72,11 +73,12 @@ const StyledMDEditor = styled(MDEditor)`
 const BottomContainer = styled.div`
   position: absolute; // 또는 fixed, 상황에 따라 선택
   flex-direction: row;
-  width: 48.7%;
+  width: 50%;
   height: 70px;
   background-color: #333;
   z-index: 10;
   overflow-x: hidden;
+  margin-left: -40px;
   color: ${theme.colors.white1};
 `;
 

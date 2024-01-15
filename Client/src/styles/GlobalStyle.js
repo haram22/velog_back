@@ -7,8 +7,8 @@ const GlobalStyle = createGlobalStyle`
     margin-left: 40px;
     margin-right: 40px;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
     background-color: ${theme.colors.background};
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;

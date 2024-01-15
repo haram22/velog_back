@@ -23,8 +23,7 @@ const Container = styled.div`
   align-items: center;
   background-color: ${theme.colors.background};
   padding-top: 150px;
-  padding-left: 40px;
-  padding-right: 40px;
+
   padding-bottom: 100px;
   box-sizing: border-box; 
 `;
