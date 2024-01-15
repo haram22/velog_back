@@ -4,10 +4,16 @@ import styled from "styled-components";
 import MDEditor from "@uiw/react-md-editor";
 import { useState } from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { useNavigate } from "react-router-dom";
 
 const PostPage = (props) => {
   const [mdinfo, setMD] = useState("");
   const [title, setTitle] = useState("");
+  let navigate = useNavigate();
+
+  function CancelButtonClicked() {
+    navigate("/Home");
+  }
   return (
     <Container>
       <StyledInput
@@ -26,16 +32,24 @@ const PostPage = (props) => {
           />
           <BottomContainer>
             <div style={{ display: "flex", alignItems: "center" }}>
-              <ArrowBackIcon
-                sx={{
-                  fontSize: "20px",
-                  color: "white",
-                  paddingTop: "5px",
-                  paddingRight: "10px",
-                  paddingLeft: "15px",
-                }}
-              />
-              <h3 style={{ paddingTop: "5px" }}>나가기</h3>
+              <CancelButton onClick={CancelButtonClicked} style={{ marginLeft: "10px" }}>
+                <ArrowBackIcon
+                  sx={{
+                    fontSize: "20px",
+                    color: "white",
+                    paddingTop: "10px"
+                  }}
+                />
+                <span
+                  style={{
+                    lineHeight: "20px",
+                    paddingLeft: "10px",
+                    paddingTop: "10px"
+                  }}
+                >
+                  나가기
+                </span>
+              </CancelButton>
               <Spacer />
               <SubSaveButton>임시저장</SubSaveButton>
               <SaveButton>출간하기</SaveButton>
@@ -57,7 +71,7 @@ const Container = styled.div`
   background-color: ${theme.colors.background};
   box-sizing: border-box;
   max-width: calc(100vw + 40px); // 뷰포트 너비 설정
-  max-height: 100vh; 
+  max-height: 100vh;
 `;
 
 const StyledMDEditor = styled(MDEditor)`
@@ -102,6 +116,28 @@ const StyledInput = styled.input`
   }
 `;
 
+const CancelButton = styled.button`
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  color: ${theme.colors.white};
+  font-weight: 600;
+  font-size: 18px;
+  transition: background-color 0.3s;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-right: 16px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  left: 25px;
+  &:hover {
+    background-color: ${theme.colors.background};
+  }
+`;
+
 const SubSaveButton = styled.button`
   background-color: transparent;
   color: white;
@@ -114,7 +150,7 @@ const SubSaveButton = styled.button`
   font-size: 18px;
   transition: background-color 0.3s;
   padding: 8px 20px;
-  margin-top: 5px;
+  margin-top: 8px;
   margin-right: 16px;
   &:hover {
     background-color: ${theme.colors.background};
@@ -133,7 +169,7 @@ const SaveButton = styled.button`
   font-size: 18px;
   transition: background-color 0.3s;
   padding: 8px 20px;
-  margin-top: 5px;
+  margin-top: 8px;
   margin-right: 16px;
   left: 25px;
   &:hover {
