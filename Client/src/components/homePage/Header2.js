@@ -80,8 +80,7 @@ const StyledDropdown = styled(Dropdown)`
   .Dropdown-control {
     background-color: ${theme.colors.secondBlack};
     color: white;
-    border-radius: 5px;
-    border-color: transparent;
+    border-color: ${theme.colors.secondBlack};
     width: 110px;
     height: 32px;
     font-size: 13px;
@@ -89,6 +88,7 @@ const StyledDropdown = styled(Dropdown)`
   .Dropdown-menu {
     background-color: ${theme.colors.secondBlack};
     color: white;
+    border-color: ${theme.colors.secondBlack};
     font-size: 13px;
   }
   .Dropdown-option.is-selected {
@@ -98,6 +98,7 @@ const StyledDropdown = styled(Dropdown)`
   }
   .Dropdown-option {
     color: ${theme.colors.white};
+    background-color: ${theme.colors.secondBlack};
     font-size: 13px;
   }
 `;
