@@ -7,7 +7,7 @@ const theme = {
     white1: "#F1F3F5",
     white: "#FFFFFF",
     unSelected: "#ACACAC",
-    secondBlack: "#2E2E2E",
+    secondBlack: "#1E1E1E",
     divider: "#2A2A2A"
   },
 };

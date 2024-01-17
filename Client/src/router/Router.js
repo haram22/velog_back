@@ -3,6 +3,7 @@ import Home from "../pages/HomePage";
 import DetailPage from "../pages/DetailPage";
 import MyPage from "../pages/MyPage";
 import PostPage from "../pages/PostPage";
+import NotFound from "../pages/NotFound";
 
 function Router() {
   return (
@@ -13,6 +14,7 @@ function Router() {
 	  <Route path="/Detail" element={<DetailPage />} />
 	  <Route path="/MyPage" element={<MyPage />} />
     <Route path="/PostPage" element={<PostPage />} />
+    <Route path="/NotFound" element={<NotFound />} />
     </Routes>
     </BrowserRouter>
   );
