@@ -2,12 +2,18 @@ import styled from "styled-components";
 import theme from "../../styles/theme";
 import dummyData from "../../data/Dummy.json";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { useNavigate } from 'react-router-dom';
 
-export default function HomeCard() {
+export default function HomeCard({ data }) {
+  const navigate = useNavigate();
+
+  const goToDetailPage = (id) => {
+    navigate(`/detail/${id}`);
+  };
   return (
     <CardsContainer>
       {dummyData.map((item, index) => (
-        <HomeCardContainer key={index}>
+        <HomeCardContainer key={index} onClick={() => goToDetailPage(item.id)}>
           <ImageContainer>
             <img src={item.imageUrl} alt={item.title} />
           </ImageContainer>
