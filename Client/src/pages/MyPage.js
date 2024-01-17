@@ -1,15 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import theme from '../styles/theme';
+import styled from 'styled-components';
+import Header from '../components/myPage/Header';
 
 const MyPage = (props) => {
 	return (
-		<>
-			<h3 style={{color: "white"}}>안녕하세요. MyPage 입니다.</h3>
-			<ul style={{color: "white"}}>
-				아직 개발 중
-			</ul>
-		</>
+		<Container>
+			<Header/>
+		</Container>
 	);
 };
 
 export default MyPage;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+  min-height: 100vh;
+  align-items: center;
+  background-color: ${theme.colors.background};
+  background-color: transparent;
+  padding-top: 200px;
+  padding-bottom: 100px;
+  box-sizing: border-box;
+`;
