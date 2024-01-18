@@ -9,32 +9,41 @@ import { useParams } from "react-router-dom";
 import dummyData from "../data/Dummy.json";
 
 export default function PostPage() {
-  const [mdinfo, setMD] = useState("");
-  const [title, setTitle] = useState("");
-  let navigate = useNavigate();
-
   const { id } = useParams();
   const editData = dummyData.find((item) => item.id === parseInt(id));
 
+  const [title, setTitle] = useState(editData ? editData.title : "");
+  const [mdinfo, setMD] = useState(editData ? editData.content : "");
+  let navigate = useNavigate();
+  
   function CancelButtonClicked() {
     navigate("/Home");
   }
+
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
+  };
+
+  // Markdown 에디터 변경 핸들러
+  const handleMDChange = (newMD) => {
+    setMD(newMD);
+  };
 
   return (
     <Container>
       <StyledInput
         type="text"
         placeholder="제목을 입력하세요"
-        value={editData? editData.title : title}
-        onChange={(e) => setTitle(e.target.value)}
+        value={title}
+        onChange={handleTitleChange}
       />
       <div className="markarea">
         <div data-color-mode="dark">
           <StyledMDEditor
             height="100vh"
             width="100vw"
-            value={editData? editData.content : mdinfo}
-            onChange={setMD}
+            value={mdinfo}
+            onChange={handleMDChange}
           />
           <BottomContainer>
             <div style={{ display: "flex", alignItems: "center" }}>
