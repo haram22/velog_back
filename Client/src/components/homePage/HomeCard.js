@@ -46,12 +46,12 @@ export default function HomeCard({ data }) {
 const CardsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 30px; /* 카드 사이의 간격 */
-  justify-content: flex-start; /* 카드를 왼쪽 정렬 */
-  align-items: flex-start; /* 카드를 상단 정렬 */
+  gap: 30px; 
+  justify-content: flex-start; 
+  align-items: flex-start;
 
   > div {
-    transition: transform 0.5s; /* 부드러운 변환 효과 */
+    transition: transform 0.5s; 
     &:hover {
       transform: translateY(-13px);
     }

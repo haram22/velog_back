@@ -5,21 +5,27 @@ import MDEditor from "@uiw/react-md-editor";
 import { useState } from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import dummyData from "../data/Dummy.json";
 
-const PostPage = (props) => {
+export default function PostPage() {
   const [mdinfo, setMD] = useState("");
   const [title, setTitle] = useState("");
   let navigate = useNavigate();
 
+  const { id } = useParams();
+  const editData = dummyData.find((item) => item.id === parseInt(id));
+
   function CancelButtonClicked() {
     navigate("/Home");
   }
+
   return (
     <Container>
       <StyledInput
         type="text"
         placeholder="제목을 입력하세요"
-        value={title}
+        value={editData? editData.title : title}
         onChange={(e) => setTitle(e.target.value)}
       />
       <div className="markarea">
@@ -27,7 +33,7 @@ const PostPage = (props) => {
           <StyledMDEditor
             height="100vh"
             width="100vw"
-            value={mdinfo}
+            value={editData? editData.content : mdinfo}
             onChange={setMD}
           />
           <BottomContainer>
@@ -61,16 +67,13 @@ const PostPage = (props) => {
   );
 };
 
-export default PostPage;
-
 const Container = styled.div`
   flex-direction: column;
-  /* overflow-x: hidden; // 가로 스크롤 방지 */
   overflow-y: hidden;
   align-items: center;
   background-color: ${theme.colors.background};
   box-sizing: border-box;
-  max-width: calc(100vw + 40px); // 뷰포트 너비 설정
+  max-width: calc(100vw + 40px);
   max-height: 100vh;
 `;
 

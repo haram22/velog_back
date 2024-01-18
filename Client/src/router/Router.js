@@ -14,6 +14,7 @@ function Router() {
         <Route path="/Detail/:id" element={<DetailPage />} />
         <Route path="/MyPage" element={<MyPage />} />
         <Route path="/PostPage" element={<PostPage />} />
+        <Route path="/PostPage/:id" element={<PostPage />} />
         <Route path="/NotFound" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

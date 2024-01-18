@@ -8,8 +8,14 @@ import { useParams } from "react-router-dom";
 import Floating from "../components/detailPage/Floating";
 
 export default function DetailPage() {
+  const navigate = useNavigate();
+
   const { id } = useParams();
   const detailData = dummyData.find((item) => item.id === parseInt(id));
+
+  const goToEditPage = (id) => {
+    navigate(`/PostPage/${id}`);
+  };
 
   if (!detailData) {
     return <div>데이터가 없습니다.</div>;
@@ -30,7 +36,7 @@ export default function DetailPage() {
             <Spacer />
             {/* <FollowButton>팔로우</FollowButton> */}
             <TextButton>통계</TextButton>
-            <TextButton>수정</TextButton>
+            <TextButton onClick={() => goToEditPage(id)}>수정</TextButton>
             <TextButton>삭제</TextButton>
           </div>
           <div style={{marginTop: "40px"}}>
