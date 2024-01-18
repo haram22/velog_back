@@ -86,9 +86,16 @@ const ContentContainer = styled.div`
 
 const TitleStyle = styled.div`
   width: 287.95px;
+  max-width: 287.95px;
   font-size: ${(props) => props.size || "16px"};
   font-weight: ${(props) => props.weight || "700"};
   margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
 `;
 
 const ContentStyle = styled.div`
@@ -97,8 +104,12 @@ const ContentStyle = styled.div`
   margin-bottom: 24px;
   font-size: ${(props) => props.size || "14px"};
   font-weight: ${(props) => props.weight || "500"};
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: normal;
 `;
 
 const DateStyle = styled.div`
