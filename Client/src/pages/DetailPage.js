@@ -28,13 +28,16 @@ export default function DetailPage() {
               {detailData.author} · {detailData.date}
             </h4>
             <Spacer />
-            <FollowButton>팔로우</FollowButton>
+            {/* <FollowButton>팔로우</FollowButton> */}
+            <TextButton>통계</TextButton>
+            <TextButton>수정</TextButton>
+            <TextButton>삭제</TextButton>
           </div>
           <div style={{marginTop: "40px"}}>
           {detailData.content}
           </div>
         </ContentContainer>
-        <RightContainer>sssddddddddddddsssssssssss</RightContainer>
+        <RightContainer></RightContainer>
       </RowContentContainer>
     </Container>
   );
@@ -117,4 +120,19 @@ const FollowButton = styled.button`
   }
 `;
 
-const Spacer = () => <div style={{ flexGrow: 1 }} />;
+const TextButton = styled.button`
+  text-align: center;
+  background-color: ${theme.colors.background};
+  color: ${theme.colors.unSelected};
+  margin-top: 13px;
+  border-color: transparent;
+  height: 32px;
+  font-size: 16px;
+  font-weight: 500;
+  
+  &:hover {
+    cursor: pointer;
+    color: ${theme.colors.white};
+  }
+`;
+const Spacer = () => <div style={{ flexGrow: 1, marginRight: "450px" }} />;

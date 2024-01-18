@@ -65,4 +65,9 @@ const CircleContainer = styled.div`
   align-content: center;
   display: flex;
   flex-direction: column;
+
+  &:hover {
+    cursor: pointer;
+    border-color: ${theme.colors.white};
+  }
 `;
