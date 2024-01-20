@@ -7,7 +7,8 @@
     "date": "2024-01-01",
     "commentsCount": 15,
     "author": "작성자1",
-    "likesCount": 100
+    "likesCount": 100,
+    "name": "김하람"
   },
   {
     "id": 1,
@@ -17,7 +18,8 @@
     "date": "2024-01-02",
     "commentsCount": 5,
     "author": "작성자2",
-    "likesCount": 50
+    "likesCount": 50,
+    "name": "김현승"
   },
   {
     "id": 2,
@@ -27,7 +29,8 @@
     "date": "2024-01-03",
     "commentsCount": 20,
     "author": "작성자3",
-    "likesCount": 80
+    "likesCount": 80,
+    "name": "기면승"
   },
   {
     "id": 3,
@@ -37,7 +40,8 @@
     "date": "2024-01-03",
     "commentsCount": 20,
     "author": "작성자3",
-    "likesCount": 80
+    "likesCount": 80,
+    "name": "기면중"
   },
   {
     "id": 4,
@@ -47,6 +51,7 @@
     "date": "2024-01-03",
     "commentsCount": 20,
     "author": "작성자3",
-    "likesCount": 80
+    "likesCount": 80,
+    "name": "김현중"
   }
 ]

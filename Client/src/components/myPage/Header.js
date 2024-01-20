@@ -6,8 +6,6 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react";
 import DetailLogo from "../../assets/detail_logo.svg";
-import dummyData from "../../data/Dummy.json"
-import { useParams } from 'react-router-dom';
 
 export default function Header() {
   let navigate = useNavigate();
@@ -22,7 +20,6 @@ export default function Header() {
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const ref = useRef(null);
-
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };

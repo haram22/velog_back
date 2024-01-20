@@ -24,7 +24,6 @@ export default function PostPage() {
     setTitle(e.target.value);
   };
 
-  // Markdown 에디터 변경 핸들러
   const handleMDChange = (newMD) => {
     setMD(newMD);
   };

@@ -1,14 +1,17 @@
-import React from 'react';
-import theme from '../styles/theme';
-import styled from 'styled-components';
-import Header from '../components/myPage/Header';
+import React from "react";
+import theme from "../styles/theme";
+import styled from "styled-components";
+import Header from "../components/myPage/Header";
+import ProfileHeader from "../components/myPage/ProfileHeader";
+import BasicTabs from "../components/myPage/TabBar";
 
 const MyPage = (props) => {
-	return (
-		<Container>
-			<Header/>
-		</Container>
-	);
+  return (
+    <Container>
+      <Header />
+      <ProfileHeader />
+    </Container>
+  );
 };
 
 export default MyPage;
@@ -25,3 +28,4 @@ const Container = styled.div`
   padding-bottom: 100px;
   box-sizing: border-box;
 `;
+

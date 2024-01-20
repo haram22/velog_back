@@ -29,7 +29,7 @@ export default function DetailPage() {
         <ContentContainer>
           <DetailTitleStyle>{detailData.title}</DetailTitleStyle>
 
-          <div style={{ display: "flex", flexDirection: "row"}}>
+          <div style={{ display: "flex", flexDirection: "row" }}>
             <h4>
               {detailData.author} · {detailData.date}
             </h4>
@@ -39,9 +39,7 @@ export default function DetailPage() {
             <TextButton onClick={() => goToEditPage(id)}>수정</TextButton>
             <TextButton>삭제</TextButton>
           </div>
-          <div style={{marginTop: "40px"}}>
-          {detailData.content}
-          </div>
+          <div style={{ marginTop: "40px" }}>{detailData.content}</div>
         </ContentContainer>
         <RightContainer></RightContainer>
       </RowContentContainer>
@@ -135,7 +133,7 @@ const TextButton = styled.button`
   height: 32px;
   font-size: 16px;
   font-weight: 500;
-  
+
   &:hover {
     cursor: pointer;
     color: ${theme.colors.white};

@@ -41,7 +41,7 @@ export default function Header() {
 
   return (
     <HeaderContainer style={{ marginLeft: "40px", paddingLeft: "90px" }}>
-      <img src={Logo} width={69.92} alt="Logo" onClick={LogoClicked}/>
+      <img src={Logo} width={69.92} alt="Logo" onClick={LogoClicked} />
       <Spacer />
       <NightlightIcon
         sx={{ fontSize: "30px", color: "white", paddingTop: "5px" }}
@@ -62,7 +62,7 @@ export default function Header() {
           onClick={toggleDropdown}
           style={{ backgroundColor: "transparent" }}
         >
-         {/*  */}
+          {/*  */}
           <AccountCircleIcon
             sx={{
               fontSize: "30px",
@@ -75,7 +75,7 @@ export default function Header() {
         </ProfileButton>
         {isDropdownOpen && (
           <StyledDropdown>
-            <ul style={{display: "flex", flexDirection: "column"}}>
+            <ul style={{ display: "flex", flexDirection: "column" }}>
               <DropdownTextStyle href="/myPage">내 벨로그</DropdownTextStyle>
               <DropdownTextStyle href="/notFound">임시 글</DropdownTextStyle>
               <DropdownTextStyle href="/notFound">읽기 목록</DropdownTextStyle>
