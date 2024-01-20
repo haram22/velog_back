@@ -5,23 +5,37 @@ import theme from "../../styles/theme";
 import dummyData from "../../data/Dummy.json";
 import ShareIcon from '@mui/icons-material/Share';
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 export default function Floating() {
   const { id } = useParams();
   const detailData = dummyData.find((item) => item.id === parseInt(id));
 
+  const [likesCount, setLikesCount] = useState(detailData.likesCount);
+  const [liked, setLiked] = useState(false); 
+
+  const handleLikeClick = () => {
+    if (liked) {
+      setLikesCount(likesCount - 1); // '좋아요' 취소
+    } else {
+      setLikesCount(likesCount + 1); // '좋아요' 활성화
+    }
+    setLiked(!liked);
+  };
+
   return (
     <FloatingContainer>
-      <CircleContainer style={{marginBottom: "7px"}}>
-        <FavoriteIcon
+      <CircleContainer style={{marginBottom: "7px" }} onClick={handleLikeClick}>
+        <FavoriteIcon 
           sx={{
             fontSize: "30px",
-            color: "white",
+            color: liked ? theme.colors.primary : "white",
             paddingTop: "10px",
           }}
         />
       </CircleContainer>
-      {detailData.likesCount}
+      {/* {detailData.likesCount} */}
+      {likesCount}
       <CircleContainer style={{marginTop: "15px"}}>
       <ShareIcon
           sx={{
