@@ -6,6 +6,8 @@ import styled from "styled-components";
 import Header from "../components/detailPage/Header";
 import { useParams } from "react-router-dom";
 import Floating from "../components/detailPage/Floating";
+import AuthorInfo from "../components/detailPage/AuthorInfo";
+import Comment from "../components/detailPage/Comment";
 
 export default function DetailPage() {
   const navigate = useNavigate();
@@ -39,7 +41,12 @@ export default function DetailPage() {
             <TextButton onClick={() => goToEditPage(id)}>수정</TextButton>
             <TextButton>삭제</TextButton>
           </div>
+          <ImageContainer>
+            <img src={detailData.imageUrl} alt={detailData.title} />
+          </ImageContainer>
           <div style={{ marginTop: "40px" }}>{detailData.content}</div>
+          <AuthorInfo />
+          <Comment />
         </ContentContainer>
         <RightContainer></RightContainer>
       </RowContentContainer>
@@ -75,7 +82,7 @@ const RowContentContainer = styled.div`
   background-color: transparent;
   width: 100%;
   height: 100%;
-  margin-top: -300px;
+  margin-top: -150px;
   justify-content: space-between;
   align-items: center;
 `;
@@ -140,3 +147,10 @@ const TextButton = styled.button`
   }
 `;
 const Spacer = () => <div style={{ flexGrow: 1, marginRight: "450px" }} />;
+
+const ImageContainer = styled.div`
+  width: 100%;
+  img {
+    width: 95%;
+  }
+`;

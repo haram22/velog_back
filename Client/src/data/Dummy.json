@@ -5,7 +5,7 @@
     "content": "content1 content1content1content1content1content1 content1",
     "imageUrl": "https://news.samsungdisplay.com/upload/notice/2023/05/dlvpDzohdp_20230531151658.jpg",
     "date": "2024-01-01",
-    "commentsCount": 15,
+    "commentsCount": 0,
     "author": "작성자1",
     "likesCount": 100,
     "name": "김하람"
@@ -16,7 +16,7 @@
     "content": "content2 content2 content2 content2 content2 content2 content2 content2 content2 content2 content2 content2 content2 content2 content2 content2 content2 content2 content2 ",
     "imageUrl": "https://www.kocca.kr/trend/vol30/img/s11/img_1.jpg",
     "date": "2024-01-02",
-    "commentsCount": 5,
+    "commentsCount": 0,
     "author": "작성자2",
     "likesCount": 50,
     "name": "김현승"
@@ -27,7 +27,7 @@
     "content": "content3 content3content3content3content3content3content3",
     "imageUrl": "https://cdn.hanryutimes.com/news/photo/202312/77225_88447_269.png",
     "date": "2024-01-03",
-    "commentsCount": 20,
+    "commentsCount": 0,
     "author": "작성자3",
     "likesCount": 80,
     "name": "기면승"
@@ -38,7 +38,7 @@
     "content": "content4 content4 content4 content4 content4 content4 content4 ",
     "imageUrl": "https://www.kyongbuk.co.kr/news/photo/202308/2140013_585486_0156.jpg",
     "date": "2024-01-03",
-    "commentsCount": 20,
+    "commentsCount": 0,
     "author": "작성자3",
     "likesCount": 80,
     "name": "기면중"
@@ -49,7 +49,7 @@
     "content": "content5 content5 content5 content5 content5 content5 ",
     "imageUrl": "https://cdn.slist.kr/news/photo/202309/485867_777213_4058.jpg",
     "date": "2024-01-03",
-    "commentsCount": 20,
+    "commentsCount": 0,
     "author": "작성자3",
     "likesCount": 80,
     "name": "김현중"

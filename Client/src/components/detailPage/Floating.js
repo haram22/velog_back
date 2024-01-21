@@ -63,7 +63,7 @@ const FloatingContainer = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${theme.colors.secondBlack};
-  margin-top: 480px;
+  margin-top: -150px;
   margin-left: 200px;
   margin-right: -10px;
 `;
