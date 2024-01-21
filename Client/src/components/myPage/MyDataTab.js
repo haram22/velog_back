@@ -17,14 +17,18 @@ export default function MyDataTab() {
   return (
     <Container>
       {dummyData.map((item, index) => (
+        
         <MyListContainer key={index} onClick={() => goToDetailPage(item.id)}>
+          <ImageContainer>
+            <img src={item.imageUrl} alt={item.title} />
+          </ImageContainer>
           <TitleStyle size="20px" style={{ marginBottom: "24px" }}>
             {item.title}
           </TitleStyle>
-          <ContentStyle style={{ marginBottom: "8px" }}>
+          <ContentStyle>
             {item.content}
           </ContentStyle>
-          <ContentContainer style={{marginBottom: "50px"}}>
+          <ContentContainer>
             <DateStyle>
               {item.date} · {item.commentsCount}개의 댓글 ·
               <FavoriteIcon
@@ -54,10 +58,11 @@ const MyListContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 200px;
+  height: 650px;
   background-color: transparent;
   margin-top: 60px;
   border-radius: 5px;
+  padding-bottom: -20px;
   color: white;
   justify-content: start;
   border-bottom: ${(props) => props.weight ?? "1px"} solid ${theme.colors.divider};
@@ -104,4 +109,13 @@ const DateStyle = styled.div`
   width: 287.95px;
   font-size: ${(props) => props.size || "12px"};
   font-weight: ${(props) => props.weight || "500"};
+`;
+
+const ImageContainer = styled.div`
+  width: 100%;
+  margin-bottom: 20px;
+  img {
+    width: 100%;
+    height: 400px;
+  }
 `;
