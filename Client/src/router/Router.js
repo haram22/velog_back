@@ -9,13 +9,13 @@ function Router() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/Detail/:id" element={<DetailPage />} />
-        <Route path="/MyPage" element={<MyPage />} />
-        <Route path="/PostPage" element={<PostPage />} />
-        <Route path="/PostPage/:id" element={<PostPage />} />
-        <Route path="/NotFound" element={<NotFound />} />
+        <Route path={process.env.PUBLIC_URL+"/"} element={<Home />} />
+        <Route path={process.env.PUBLIC_URL+"/Home"} element={<Home />} />
+        <Route path={process.env.PUBLIC_URL+"/Detail/:id"} element={<DetailPage />} />
+        <Route path={process.env.PUBLIC_URL+"/MyPage"} element={<MyPage />} />
+        <Route path={process.env.PUBLIC_URL+"/PostPage"} element={<PostPage />} />
+        <Route path={process.env.PUBLIC_URL+"/PostPage/:id"} element={<PostPage />} />
+        <Route path={process.env.PUBLIC_URL+"/NotFound"} element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
