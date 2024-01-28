@@ -8,7 +8,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Router />
+      <Router basename={process.env.PUBLIC_URL}/>
     </ThemeProvider>
   );
 }
