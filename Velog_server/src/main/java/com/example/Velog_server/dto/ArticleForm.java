@@ -23,6 +23,6 @@ public class ArticleForm {
     }
 
     public Article toEntity() {
-        return new Article(null, title, content, 0, 0, null, null);
+        return new Article(null, title, content, 0, 0);
     }
 }
