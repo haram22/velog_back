@@ -1,6 +1,9 @@
 package com.example.Velog_server.dto;
 
 import com.example.Velog_server.entity.Article;
+import jakarta.persistence.Column;
+
+import java.util.Date;
 
 public class ArticleForm {
     private String title;
@@ -20,6 +23,6 @@ public class ArticleForm {
     }
 
     public Article toEntity() {
-        return new Article(null, title, content);
+        return new Article(null, title, content, 0, 0, null, null);
     }
 }
