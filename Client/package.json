@@ -30,7 +30,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://velogram.netlify.app/",
+  "homepage": "/velog/",
   "browserslist": {
     "production": [
       ">0.2%",
