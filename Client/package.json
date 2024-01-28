@@ -30,7 +30,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://clever-brioche-ddb9af.netlify.app",
+  "homepage": "https://clever-brioche-ddb9af.netlify.app/",
   "browserslist": {
     "production": [
       ">0.2%",
