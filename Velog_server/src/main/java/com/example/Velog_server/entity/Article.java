@@ -25,5 +25,4 @@ public class Article extends BaseTime {
     private int likeCount;
     @Column
     private int commentCount;
-
 }
