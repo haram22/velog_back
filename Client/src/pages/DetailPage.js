@@ -8,19 +8,41 @@ import { useParams } from "react-router-dom";
 import Floating from "../components/detailPage/Floating";
 import AuthorInfo from "../components/detailPage/AuthorInfo";
 import Comment from "../components/detailPage/Comment";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function DetailPage() {
   const navigate = useNavigate();
 
   const { id } = useParams();
-  const detailData = dummyData.find((item) => item.id === parseInt(id));
+  // const detailData = dummyData.find((item) => item.id === parseInt(id));
 
   const goToEditPage = (id) => {
     navigate(`/PostPage/${id}`);
   };
 
-  if (!detailData) {
-    return <div>데이터가 없습니다.</div>;
+  const [detailData, setData] = useState([]); // 데이터를 저장할 상태
+
+  useEffect(() => {
+    // 서버에서 데이터를 가져오는 비동기 요청
+    axios.get(`http://localhost:8080/api/articles/get/${id}`)
+      .then((response) => {
+        // 가져온 데이터를 상태(State)에 저장
+        setData(response.data);
+        
+      })
+      .catch((error) => {
+        console.error("데이터를 가져오는 중 오류 발생:", error);
+      });
+  }, []); 
+
+  function DeleteButtonClicked() {
+    axios.delete(`http://localhost:8080/api/articles/delete/${id}`, {
+        }).then(function (response) {
+          navigate("/Home");
+        }).catch(function (error) {
+            console.log(error);
+        });
   }
 
   return (
@@ -33,16 +55,17 @@ export default function DetailPage() {
 
           <div style={{ display: "flex", flexDirection: "row" }}>
             <h4>
-              {detailData.author} · {detailData.date}
+              {/* {detailData.author} */}
+               · {detailData.createdAt}
             </h4>
             <Spacer />
             {/* <FollowButton>팔로우</FollowButton> */}
             <TextButton>통계</TextButton>
             <TextButton onClick={() => goToEditPage(id)}>수정</TextButton>
-            <TextButton>삭제</TextButton>
+            <TextButton onClick={DeleteButtonClicked}>삭제</TextButton>
           </div>
           <ImageContainer>
-            <img src={detailData.imageUrl} alt={detailData.title} />
+            {/* <img src={detailData.imageUrl} alt={detailData.title} /> */}
           </ImageContainer>
           <div style={{ marginTop: "40px" }}>{detailData.content}</div>
           <AuthorInfo />

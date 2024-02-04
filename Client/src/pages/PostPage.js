@@ -7,6 +7,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import dummyData from "../data/Dummy.json";
+import axios from 'axios';
 
 export default function PostPage() {
   const { id } = useParams();
@@ -27,6 +28,17 @@ export default function PostPage() {
   const handleMDChange = (newMD) => {
     setMD(newMD);
   };
+
+  function PublishButtonClicked(){
+    axios.post("http://localhost:8080/api/articles/create", {
+            title: title,
+            content: mdinfo
+        }).then(function (response) {
+          navigate("/Home");
+        }).catch(function (error) {
+            console.log(error);
+        });
+  }
 
   return (
     <Container>
@@ -66,7 +78,7 @@ export default function PostPage() {
               </CancelButton>
               <Spacer />
               <SubSaveButton>임시저장</SubSaveButton>
-              <SaveButton>출간하기</SaveButton>
+              <SaveButton onClick={PublishButtonClicked}>출간하기</SaveButton>
             </div>
           </BottomContainer>
         </div>

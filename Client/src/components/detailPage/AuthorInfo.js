@@ -4,10 +4,12 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import theme from "../../styles/theme";
 import { useParams } from "react-router-dom";
 import dummyData from "../../data/Dummy.json";
+import { useEffect, useState } from "react";
 
 export default function AuthorInfo() {
   const { id } = useParams();
-  const detailData = dummyData.find((item) => item.id === parseInt(id));
+  // const detailData = dummyData.find((item) => item.id === parseInt(id));
+  const [detailData, setData] = useState([]); // 데이터를 저장할 상태
 
   return (
     <MyInfo height="27%">
@@ -21,7 +23,7 @@ export default function AuthorInfo() {
         }}
       />
       <ProfileInfoTextStyle size="26px" weight="700">
-        {detailData.author}
+        {/* {detailData.author} */}author
       </ProfileInfoTextStyle>
     </MyInfo>
   );

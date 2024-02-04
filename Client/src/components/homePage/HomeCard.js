@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import theme from "../../styles/theme";
-import dummyData from "../../data/Dummy.json";
+// import dummyData from "../../data/Dummy.json";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function HomeCard({ data }) {
   const navigate = useNavigate();
@@ -10,22 +12,37 @@ export default function HomeCard({ data }) {
   const goToDetailPage = (id) => {
     navigate(`/detail/${id}`);
   };
+
+  const [responseData, setData] = useState([]); // 데이터를 저장할 상태
+
+  useEffect(() => {
+    // 서버에서 데이터를 가져오는 비동기 요청
+    axios.get("http://localhost:8080/api/articles/get")
+      .then((response) => {
+        // 가져온 데이터를 상태(State)에 저장
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error("데이터를 가져오는 중 오류 발생:", error);
+      });
+  }, []); 
+
   return (
     <CardsContainer>
-      {dummyData.map((item, index) => (
+      {responseData.map((item, index) => (
         <HomeCardContainer key={index} onClick={() => goToDetailPage(item.id)}>
-          <ImageContainer>
+          {/* <ImageContainer>
             <img src={item.imageUrl} alt={item.title} />
-          </ImageContainer>
+          </ImageContainer> */}
           <ContentContainer>
             <TitleStyle size="16px">{item.title}</TitleStyle>
             <ContentStyle>{item.content}</ContentStyle>
             <DateStyle>
-              {item.date} · {item.commentsCount}개의 댓글
+              {item.updatedAt} · {item.viewCount}개의 댓글
             </DateStyle>
           </ContentContainer>
           <BottomContainer>
-            <p>by {item.author}</p>
+            {/* <p>by {item.author}</p> */}
             <Spacer />
             <FavoriteIcon
               sx={{
@@ -35,7 +52,7 @@ export default function HomeCard({ data }) {
                 paddingRight: "10px",
               }}
             />
-            <p>{item.likesCount}</p>
+            <p>{item.viewCount}</p>
           </BottomContainer>
         </HomeCardContainer>
       ))}

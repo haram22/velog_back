@@ -6,7 +6,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react";
 import DetailLogo from "../../assets/detail_logo.svg";
-import dummyData from "../../data/Dummy.json"
+// import dummyData from "../../data/Dummy.json"
 import { useParams } from 'react-router-dom';
 
 export default function Header() {
@@ -42,16 +42,12 @@ export default function Header() {
   }, [ref]);
 
   const { id } = useParams();
-  const detailData = dummyData.find(item => item.id === parseInt(id));
-
-  if (!detailData) {
-    return <div>데이터가 없습니다.</div>;
-  }
 
   return (
     <HeaderContainer style={{ marginLeft: "40px", paddingLeft: "90px" }}>
       <img src={DetailLogo} width={30} paddingRight={10} alt="Logo" onClick={LogoClicked}/>
-      <div style={{fontSize: "21px", fontWeight: "700", paddingTop: "10px", paddingLeft: "15px", left: "10px"}}>{detailData.author}</div>
+      {/* <div style={{fontSize: "21px", fontWeight: "700", paddingTop: "10px", paddingLeft: "15px", left: "10px"}}>{detailData.author}</div> */}
+      <div style={{fontSize: "21px", fontWeight: "700", paddingTop: "10px", paddingLeft: "15px", left: "10px"}}>author</div>
       <Spacer />
       <NightlightIcon
         sx={{ fontSize: "30px", color: "white", paddingTop: "5px" }}

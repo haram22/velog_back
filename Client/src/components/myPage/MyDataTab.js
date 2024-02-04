@@ -2,9 +2,11 @@ import React from "react";
 import theme from "../../styles/theme";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
-import dummyData from "../../data/Dummy.json";
+// import dummyData from "../../data/Dummy.json";
 import { useNavigate } from "react-router-dom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function MyDataTab() {
   const navigate = useNavigate();
@@ -14,9 +16,23 @@ export default function MyDataTab() {
     navigate(`/detail/${id}`);
   };
 
+  const [responseData, setData] = useState([]); // 데이터를 저장할 상태
+
+  useEffect(() => {
+    // 서버에서 데이터를 가져오는 비동기 요청
+    axios.get("http://localhost:8080/api/articles/get")
+      .then((response) => {
+        // 가져온 데이터를 상태(State)에 저장
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error("데이터를 가져오는 중 오류 발생:", error);
+      });
+  }, []); 
+
   return (
     <Container>
-      {dummyData.map((item, index) => (
+      {responseData.map((item, index) => (
         
         <MyListContainer key={index} onClick={() => goToDetailPage(item.id)}>
           <ImageContainer>

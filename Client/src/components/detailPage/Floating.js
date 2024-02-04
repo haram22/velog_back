@@ -9,9 +9,10 @@ import { useState } from "react";
 
 export default function Floating() {
   const { id } = useParams();
-  const detailData = dummyData.find((item) => item.id === parseInt(id));
+  // const detailData = dummyData.find((item) => item.id === parseInt(id));
+  const [detailData, setData] = useState([]); // 데이터를 저장할 상태
 
-  const [likesCount, setLikesCount] = useState(detailData.likesCount);
+  const [likesCount, setLikesCount] = useState(detailData.viewCount);
   const [liked, setLiked] = useState(false); 
 
   const handleLikeClick = () => {
@@ -34,8 +35,8 @@ export default function Floating() {
           }}
         />
       </CircleContainer>
-      {/* {detailData.likesCount} */}
-      {likesCount}
+      {detailData.likesCount}
+      {/* 20 */}
       <CircleContainer style={{marginTop: "15px"}}>
       <ShareIcon
           sx={{
